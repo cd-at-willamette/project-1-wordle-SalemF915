@@ -2,7 +2,7 @@
 # Name:Salem Fraire
 # Collaborators (if any):N/A
 # GenAI Transcript (if any):N/A
-# Estimated time spent (hr): ~ 4 hours
+# Estimated time spent (hr):~4 hours
 # Description of any added extensions: 0
 ########################################
 
@@ -21,6 +21,8 @@ def wordle():
 
 
 
+
+
     def enter_action():
         word_entered = ''
 
@@ -29,7 +31,7 @@ def wordle():
         for i in range(5):
             word_entered += gw.get_square_letter(gw.get_current_row(), i)
             #colors letters
-        if len(word_entered) == 5:
+        if len(word_entered) == 5 and is_english_word(word_entered):
             compare = [word_entered[0], word_entered[1], word_entered[2], word_entered[3], word_entered[4]]
 
             #use this to elimate the green letter so when the yellow letter checker runs it doesnt say yellow there if green there
@@ -65,7 +67,7 @@ def wordle():
 
         # What should happen when RETURN/ENTER is pressed.
         #display the entered word
-        if len(word_entered) == 5:
+        if len(word_entered) == 5 and is_english_word(word_entered):
             gw.show_message(correct)
             
 
